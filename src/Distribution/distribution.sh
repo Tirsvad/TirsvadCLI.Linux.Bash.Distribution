@@ -38,5 +38,3 @@ i*86)
     # leave ARCH as-is
     ;;
 esac
-
-
