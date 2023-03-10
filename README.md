@@ -12,3 +12,11 @@ git submodule update
 In your script file
 
     . <submodule folder>/src/Distribution/distribution.sh
+
+## Doxygen
+
+Use doxygen to generate source code documentation.
+
+	doxygen
+
+it's found in folder documentation
