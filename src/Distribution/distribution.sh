@@ -1,14 +1,15 @@
 #!/bin/bash
 
-## @file
+## @file distribution.sh
 ## @author Jens Tirsvad Nielsen
 ## @version
 ## @brief Getting OS, version and architecture
 ## @details
 ## 
 ## @par URL
-## https://github.com/TirsvadCLI/Linux.Distribution @n
+## https://github.com/TirsvadCLI/Linux.Distribution
 
+declare -r TCLI_LINUX_DISTRIBUTION
 
 ## @brief string containing name of distribution
 declare TCLI_LINUX_DISTRIBUTION_ID
