@@ -3,9 +3,9 @@
 ## @file distribution.sh
 ## @author Jens Tirsvad Nielsen
 ## @version
-## @brief Getting OS, version and architecture
+## @brief This script retrieves the operating system, version, and architecture of a Linux distribution.
 ## @details
-## 
+## This script retrieves the operating system, version, and architecture of a Linux distribution. It accurately identifies the distribution using standard system files and commands.
 ## @par URL
 ## https://github.com/TirsvadCLI/Linux.Distribution
 
@@ -46,12 +46,18 @@ fi
 
 case $(uname -m) in
 x86_64)
-	TCLI_LINUX_DISTRIBUTION_ARCH=x64  # or AMD64 or Intel64 or whatever
+	TCLI_LINUX_DISTRIBUTION_ARCH=x64  # AMD64 or Intel64
 	;;
 i*86)
-	TCLI_LINUX_DISTRIBUTION_ARCH=x86  # or IA32 or Intel32 or whatever
+	TCLI_LINUX_DISTRIBUTION_ARCH=x86  # IA32 or Intel32
+	;;
+arm*)
+	TCLI_LINUX_DISTRIBUTION_ARCH=arm  # ARM
+	;;
+riscv64)
+	TCLI_LINUX_DISTRIBUTION_ARCH=riscv64  # RISC-V 64-bit
 	;;
 *)
-	exit 1
+	TCLI_LINUX_DISTRIBUTION_ARCH=$(uname -m)
 	;;
 esac
