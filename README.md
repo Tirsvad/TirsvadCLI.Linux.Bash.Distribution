@@ -12,7 +12,7 @@
     </a>
 </div>
 
-# Linux Distribution Script
+# Linux Distribution Info
 This script retrieves the operating system, version, and architecture of a Linux distribution. It accurately identifies the distribution using standard system files and commands, ensuring broad compatibility across various Linux systems.
 
 ## Getting Started
@@ -29,8 +29,6 @@ Alternatively, you can download the script directly with:
 ```bash
 curl -L https://github.com/TirsvadCLI/Linux.Distribution/tarball/master | tar xz --strip-components=2 --wildcards '*/src/*' -C ./
 ```
-
-
 
 ## Script Description
 
@@ -53,7 +51,6 @@ The script sets the following environment variables:
     - $(uname -m) for all others arch
 
 ## Examples
-
 ```bash
 #!/bin/bash
 
@@ -76,17 +73,31 @@ echo "Arch = $TCLI_LINUX_DISTRIBUTION_ARCH"
 ```
 
 ## Testing
-
 To create a Docker image for testing, use the following command:
 ```bash
-docker build -t linux-distro-ubuntu-test .
+docker-compose build
 ```
 
 To run the test in the Docker image, execute:
+
+**ubuntu**
 ```bash
-docker run --rm -it  linux-distro-ubuntu-test:latest
+docker run --rm -it tirsvadclilinuxdistribution_ubuntu_service
 ./test_distribution.sh
 ```
+
+**debian**
+```bash
+docker run --rm -it tirsvadclilinuxdistribution_debian_service
+./test_distribution.sh
+```
+
+## Contribution
+See more [here](CONTRIBUTING.md)
+
+## Code of conduct
+See more [here](CODE_OF_CONDUCT.md)
+
 
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->

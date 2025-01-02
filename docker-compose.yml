@@ -1,8 +1,16 @@
 version: '3.4'
 
 services:
-  tirsvadclilinux:
-    image: tirsvadclilinux
+  debian_service:
     build:
-      context: .
-      dockerfile: ./Dockerfile
+      context: ./
+      dockerfile: Dockerfile_debian_latest
+    container_name: debian_latest_container
+    tty: true
+
+  ubuntu_service:
+    build:
+      context: ./
+      dockerfile: Dockerfile_ubuntu_latest
+    container_name: ubuntu_lateset_container
+    tty: true
