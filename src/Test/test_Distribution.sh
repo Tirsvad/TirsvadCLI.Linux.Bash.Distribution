@@ -1,9 +1,9 @@
-# test_distribution.sh
-
 #!/bin/bash
 
-# Run the distribution script
-. ../Distribution/distribution.sh
+## @file test_Distribution.sh
+
+# Source the distribution script
+. ../Distribution/Distribution.sh
 
 # Check if the output variables are set
 if [[ -z "$TCLI_LINUX_DISTRIBUTION_ID" ]]; then

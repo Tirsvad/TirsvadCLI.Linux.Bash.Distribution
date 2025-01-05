@@ -9,6 +9,7 @@
 ## @par URL
 ## https://github.com/TirsvadCLI/Linux.Distribution
 
+## @brief string for check if script is sourced
 declare -r TCLI_LINUX_DISTRIBUTION
 
 ## @brief string containing name of distribution
@@ -20,6 +21,17 @@ declare TCLI_LINUX_DISTRIBUTION_RELEASE
 ## @brief string containing archecture of distribution
 declare TCLI_LINUX_DISTRIBUTION_ARCH
 
+# This script determines the Linux distribution and its version.
+# It sets the following environment variables:
+# - TCLI_LINUX_DISTRIBUTION_ID: The name of the Linux distribution.
+# - TCLI_LINUX_DISTRIBUTION_RELEASE: The version of the Linux distribution.
+#
+# The script checks for the distribution information in the following order:
+# 1. /etc/os-release: Standard file for freedesktop.org and systemd-based systems.
+# 2. lsb_release command: Standard command for Linux Standard Base (LSB) compliant distributions.
+# 3. /etc/lsb-release: Fallback for some versions of Debian/Ubuntu without the lsb_release command.
+# 4. /etc/debian_version: Fallback for older Debian/Ubuntu systems.
+# 5. uname command: Fallback for other systems, including BSD.
 if [ -f /etc/os-release ]; then
 	# freedesktop.org and systemd
 	. /etc/os-release
@@ -44,6 +56,14 @@ else
 	TCLI_LINUX_DISTRIBUTION_RELEASE=$(uname -r)
 fi
 
+# This script determines the architecture of the current machine using the `uname -m` command
+# and sets the TCLI_LINUX_DISTRIBUTION_ARCH variable accordingly.
+# Supported architectures:
+# - x86_64: AMD64 or Intel64
+# - i*86: IA32 or Intel32
+# - arm*: ARM
+# - riscv64: RISC-V 64-bit
+# If the architecture is not recognized, it defaults to the output of `uname -m`.
 case $(uname -m) in
 x86_64)
 	TCLI_LINUX_DISTRIBUTION_ARCH=x64  # AMD64 or Intel64
