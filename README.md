@@ -64,7 +64,7 @@ declare -r PATH_VENDOR_LINUX_DISTRIBUTION="$PATH_VENDOR/Linux.Distribution"
 cd "$PATH_VENDOR_LINUX_DISTRIBUTION"
 # Download and extract the contents from GitHub into the Vendor directory
 curl -L https://github.com/TirsvadCLI/Linux.Distribution/tarball/master | tar xzf - --strip-components=2 --wildcards '*/src/*'
-. "$PATH_VENDOR_LINUX_DISTRIBUTION/Distribution/distribution.sh"
+. "$PATH_VENDOR_LINUX_DISTRIBUTION/Distribution/Distribution.sh"
 cd "$PATH_ROOT"
 
 echo "Distribution = $TCLI_LINUX_DISTRIBUTION_ID"
@@ -83,13 +83,13 @@ To run the test in the Docker image, execute:
 **ubuntu**
 ```bash
 docker run --rm -it tirsvadclilinuxdistribution_ubuntu_service
-./test_distribution.sh
+./test_Distribution.sh
 ```
 
 **debian**
 ```bash
 docker run --rm -it tirsvadclilinuxdistribution_debian_service
-./test_distribution.sh
+./test_Distribution.sh
 ```
 
 ## Contribution
