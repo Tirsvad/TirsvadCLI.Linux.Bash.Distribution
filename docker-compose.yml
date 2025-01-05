@@ -12,5 +12,5 @@ services:
     build:
       context: ./
       dockerfile: Dockerfile_ubuntu_latest
-    container_name: ubuntu_lateset_container
+    container_name: ubuntu_latest_container
     tty: true
