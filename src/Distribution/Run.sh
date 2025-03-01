@@ -8,6 +8,14 @@
 ## This script retrieves the operating system, version, and architecture of a Linux distribution. It accurately identifies the distribution using standard system files and commands.
 ## @par URL
 ## https://github.com/TirsvadCLI/Linux.Distribution
+## @brief Check if the script is being sourced or executed
+
+# Check if the script is being sourced or executed
+# If the script is executed, print an error message and exit with an error code.
+if [[ "${BASH_SOURCE[0]}" == "${0}" ]]; then
+	echo "This script is intended to be sourced, not executed."
+	exit 1
+fi
 
 ## @brief string for check if script is sourced
 declare -g TCLI_LINUX_BASH_DISTRIBUTION = 1.0.0
