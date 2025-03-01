@@ -21,13 +21,13 @@ fi
 declare -g TCLI_LINUX_BASH_DISTRIBUTION=1.0.0
 
 ## @brief string containing name of distribution
-declare TCLI_LINUX_BASH_DISTRIBUTION_ID
+declare -g TCLI_LINUX_BASH_DISTRIBUTION_ID
 
 ## @brief string containing version of distribution
-declare TCLI_LINUX_BASH_DISTRIBUTION_RELEASE
+declare -g TCLI_LINUX_BASH_DISTRIBUTION_RELEASE
 
 ## @brief string containing archecture of distribution
-declare TCLI_LINUX_BASH_DISTRIBUTION_ARCH
+declare -g TCLI_LINUX_BASH_DISTRIBUTION_ARCH
 
 # This script determines the Linux distribution and its version.
 # It sets the following environment variables:
