@@ -18,7 +18,7 @@ if [[ "${BASH_SOURCE[0]}" == "${0}" ]]; then
 fi
 
 ## @brief string for check if script is sourced
-declare -g TCLI_LINUX_BASH_DISTRIBUTION = 1.0.0
+declare -g TCLI_LINUX_BASH_DISTRIBUTION=1.0.0
 
 ## @brief string containing name of distribution
 declare TCLI_LINUX_BASH_DISTRIBUTION_ID
