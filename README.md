@@ -7,7 +7,7 @@
 
 <br />
 <div align="center">
-    <a href="https://github.com/TirsvadCLI/Linux.Distribution">
+    <a href="https://github.com/TirsvadCLI/Linux.Bash.Distribution">
         <img src="images/logo.png" alt="Logo" width="80" height="80">
     </a>
 </div>
@@ -20,14 +20,14 @@ This script retrieves the operating system, version, and architecture of a Linux
 ### Clone the Repository
 
 ```bash
-git clone git@github.com:TirsvadCLI/Linux.Distribution.git
+git clone git@github.com:TirsvadCLI/Linux.Bash.Distribution.git
 ```
 
 ### Download the Script Directly
 Alternatively, you can download the script directly with:
 
 ```bash
-curl -L https://github.com/TirsvadCLI/Linux.Distribution/tarball/master | tar xz --strip-components=2 --wildcards '*/src/*' -C ./
+curl -L https://github.com/TirsvadCLI/Linux.Bash.Distribution/tarball/master | tar xz --strip-components=2 --wildcards '*/src/*' -C ./
 ```
 
 ## Script Description
@@ -39,9 +39,9 @@ As a last resort, the script defaults to using uname commands to ensure it can r
 ## Variables
 The script sets the following environment variables:
 
-- `TCLI_LINUX_DISTRIBUTION_ID`: A string containing the name of the distribution.
-- `TCLI_LINUX_DISTRIBUTION_RELEASE`: A string containing the version of the distribution.
-- `TCLI_LINUX_DISTRIBUTION_ARCH`: A string containing the architecture of the distribution.
+- `TCLI_LINUX_BASH_DISTRIBUTION_ID`: A string containing the name of the distribution.
+- `TCLI_LINUX_BASH_DISTRIBUTION_RELEASE`: A string containing the version of the distribution.
+- `TCLI_LINUX_BASH_DISTRIBUTION_ARCH`: A string containing the architecture of the distribution.
 
     Can return folling values
     - `x64`: AMD64 or Intel64
@@ -56,20 +56,20 @@ The script sets the following environment variables:
 
 declare -r PATH_ROOT=$(realpath $(dirname "$0"))
 declare -r PATH_VENDOR="$PATH_ROOT/Vendor"
-declare -r PATH_VENDOR_LINUX_DISTRIBUTION="$PATH_VENDOR/Linux.Distribution"
+declare -r PATH_VENDOR_LINUX_DISTRIBUTION="$PATH_VENDOR/Linux.Bash.Distribution"
 
 # Create the Vendor directory if it doesn't exist
 [[ -d "$PATH_VENDOR_LINUX_DISTRIBUTION" ]] || mkdir -p "$PATH_VENDOR_LINUX_DISTRIBUTION"
 
 cd "$PATH_VENDOR_LINUX_DISTRIBUTION"
 # Download and extract the contents from GitHub into the Vendor directory
-curl -L https://github.com/TirsvadCLI/Linux.Distribution/tarball/master | tar xzf - --strip-components=2 --wildcards '*/src/*'
+curl -L https://github.com/TirsvadCLI/Linux.Bash.Distribution/tarball/master | tar xzf - --strip-components=2 --wildcards '*/src/*'
 . "$PATH_VENDOR_LINUX_DISTRIBUTION/Distribution/Distribution.sh"
 cd "$PATH_ROOT"
 
-echo "Distribution = $TCLI_LINUX_DISTRIBUTION_ID"
-echo "Release = $TCLI_LINUX_DISTRIBUTION_RELEASE"
-echo "Arch = $TCLI_LINUX_DISTRIBUTION_ARCH"
+echo "Distribution = $TCLI_LINUX_BASH_DISTRIBUTION_ID"
+echo "Release = $TCLI_LINUX_BASH_DISTRIBUTION_RELEASE"
+echo "Arch = $TCLI_LINUX_BASH_DISTRIBUTION_ARCH"
 ```
 
 ## Testing
@@ -102,25 +102,25 @@ See more [here](CODE_OF_CONDUCT.md)
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
 
-[contributors-shield]: https://img.shields.io/github/contributors/TirsvadCLI/Linux.Distribution?style=for-the-badge
+[contributors-shield]: https://img.shields.io/github/contributors/TirsvadCLI/Linux.Bash.Distribution?style=for-the-badge
 
-[contributors-url]: https://github.com/TirsvadCLI/Linux.Distribution/graphs/contributors
+[contributors-url]: https://github.com/TirsvadCLI/Linux.Bash.Distribution/graphs/contributors
 
-[forks-shield]: https://img.shields.io/github/forks/TirsvadCLI/Linux.Distribution?style=for-the-badge
+[forks-shield]: https://img.shields.io/github/forks/TirsvadCLI/Linux.Bash.Distribution?style=for-the-badge
 
-[forks-url]: https://github.com/TirsvadCLI/Linux.Distribution/network/members
+[forks-url]: https://github.com/TirsvadCLI/Linux.Bash.Distribution/network/members
 
-[stars-shield]: https://img.shields.io/github/stars/TirsvadCLI/Linux.Distribution?style=for-the-badge
+[stars-shield]: https://img.shields.io/github/stars/TirsvadCLI/Linux.Bash.Distribution?style=for-the-badge
 
-[stars-url]: https://github.com/TirsvadCLI/Linux.Distribution/stargazers
+[stars-url]: https://github.com/TirsvadCLI/Linux.Bash.Distribution/stargazers
 
-[issues-shield]: https://img.shields.io/github/issues/TirsvadCLI/Linux.Distribution?style=for-the-badge
+[issues-shield]: https://img.shields.io/github/issues/TirsvadCLI/Linux.Bash.Distribution?style=for-the-badge
 
-[issues-url]: https://github.com/TirsvadCLI/Linux.Distribution/issues
+[issues-url]: https://github.com/TirsvadCLI/Linux.Bash.Distribution/issues
 
-[license-shield]: https://img.shields.io/github/license/TirsvadCLI/Linux.Distribution?style=for-the-badge
+[license-shield]: https://img.shields.io/github/license/TirsvadCLI/Linux.Bash.Distribution?style=for-the-badge
 
-[license-url]: https://github.com/TirsvadCLI/Linux.Distribution/blob/master/LICENSE
+[license-url]: https://github.com/TirsvadCLI/Linux.Bash.Distribution/blob/master/LICENSE
 
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
 
